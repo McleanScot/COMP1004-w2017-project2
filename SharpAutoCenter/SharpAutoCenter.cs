@@ -12,6 +12,7 @@ namespace SharpAutoCenter
 {
     public partial class SharpAutoCenter : Form
     {
+        
         public SharpAutoCenter()
         {
             InitializeComponent();
