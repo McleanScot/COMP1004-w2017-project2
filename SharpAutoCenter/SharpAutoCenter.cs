@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * scot mclean
+ * 2, 10, 2017
+ * get's calculates the sales bonus for employees.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +15,9 @@ using System.Windows.Forms;
 
 namespace SharpAutoCenter
 {
+    /*
+    * listing all instance variables 
+    */
     public partial class SharpAutoCenter : Form
     {
         private decimal _additionalPrice;
@@ -32,13 +40,19 @@ namespace SharpAutoCenter
         {
             InitializeComponent();
         }
-
+        /*
+        *  closing the application when the exit menu button is clicked 
+        */
         private void _exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        /*
+        *adding and subtracting the stereo price to the additional price 
+        * based off if the checkbox is checked or not
+        */
 
-        private void StereoSystemCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void _StereoSystemCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (StereoSystemCheckBox.Checked)
             {
@@ -51,8 +65,11 @@ namespace SharpAutoCenter
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
             };
         }
-
-        private void LeatherInteriorCheckBox_CheckedChanged(object sender, EventArgs e)
+        /*
+        *adding and subtracting the leather interior price to the additional price 
+        * based off if the checkbox is checked or not
+        */
+        private void _LeatherInteriorCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (LeatherInteriorCheckBox.Checked)
             {
@@ -65,8 +82,11 @@ namespace SharpAutoCenter
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
             };
         }
-
-        private void ComputerNavCheckBox_CheckedChanged(object sender, EventArgs e)
+        /*
+        *adding and subtracting the computer nav price to the additional price 
+        * based off if the checkbox is checked or not
+        */
+        private void _ComputerNavCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ComputerNavCheckBox.Checked)
             {
@@ -79,8 +99,11 @@ namespace SharpAutoCenter
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
             };
         }
-
-        private void StandardRadioButton_CheckedChanged(object sender, EventArgs e)
+        /*
+        *adding and subtracting the standard price to the additional price 
+        * based off if the checkbox is checked or not
+        */
+        private void _StandardRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (StandardRadioButton.Checked)
             {
@@ -93,8 +116,11 @@ namespace SharpAutoCenter
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
             }
         }
-
-        private void PearlizedRadioButton_CheckedChanged(object sender, EventArgs e)
+        /*
+        *adding and subtracting the pearlized price to the additional price 
+        * based off if the checkbox is checked or not
+        */
+        private void _PearlizedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (PearlizedRadioButton.Checked)
             {
@@ -107,8 +133,11 @@ namespace SharpAutoCenter
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
             }
         }
-
-        private void CustomizedDetailingRadioButton_CheckedChanged(object sender, EventArgs e)
+        /*
+        *adding and subtracting the custom detailing price to the additional price 
+        * based off if the checkbox is checked or not
+        */
+        private void _CustomizedDetailingRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (CustomizedDetailingRadioButton.Checked)
             {
@@ -121,8 +150,10 @@ namespace SharpAutoCenter
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
             }
         }
-
-        private void CalculateButton_Click(object sender, EventArgs e)
+        /*
+        * doing all the calculations and then assigning them to string values for the textboxes.
+        */
+        private void _CalculateButton_Click(object sender, EventArgs e)
         {
             _basePrice = Convert.ToDecimal(BasePriceTextBox.Text);
             _subTotal = _additionalPrice + _basePrice;
@@ -135,8 +166,10 @@ namespace SharpAutoCenter
             _amountDue = _total - _tradeInValue;
             AmountDueTextBox.Text = _amountDue.ToString("C2");
         }
-
-        private void ClearButton_Click(object sender, EventArgs e)
+        /*
+        * clearing the text fields for the text boxes back to their defualts
+        */
+        private void _ClearButton_Click(object sender, EventArgs e)
         {
             BasePriceTextBox.Text = "";
             AdditionalOptionsTextBox.Text = "";
@@ -150,8 +183,10 @@ namespace SharpAutoCenter
             ComputerNavCheckBox.Checked = false;
             StandardRadioButton.Checked = true;
         }
-
-        private void ExitButton_Click(object sender, EventArgs e)
+        /*
+        * closing the application when the exit button is clicked.
+        */
+        private void _ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

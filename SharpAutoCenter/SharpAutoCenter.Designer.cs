@@ -139,7 +139,7 @@
             this.CalculateButton.TabIndex = 7;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
-            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
+            this.CalculateButton.Click += new System.EventHandler(this._CalculateButton_Click);
             // 
             // ClearButton
             // 
@@ -149,7 +149,7 @@
             this.ClearButton.TabIndex = 8;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            this.ClearButton.Click += new System.EventHandler(this._ClearButton_Click);
             // 
             // ExitButton
             // 
@@ -159,7 +159,7 @@
             this.ExitButton.TabIndex = 9;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.ExitButton.Click += new System.EventHandler(this._ExitButton_Click);
             // 
             // AdditionalGroupBox
             // 
@@ -182,7 +182,7 @@
             this.ComputerNavCheckBox.TabIndex = 2;
             this.ComputerNavCheckBox.Text = "Computer Navigation";
             this.ComputerNavCheckBox.UseVisualStyleBackColor = true;
-            this.ComputerNavCheckBox.CheckedChanged += new System.EventHandler(this.ComputerNavCheckBox_CheckedChanged);
+            this.ComputerNavCheckBox.CheckedChanged += new System.EventHandler(this._ComputerNavCheckBox_CheckedChanged);
             // 
             // LeatherInteriorCheckBox
             // 
@@ -193,7 +193,7 @@
             this.LeatherInteriorCheckBox.TabIndex = 1;
             this.LeatherInteriorCheckBox.Text = "Leather Interior";
             this.LeatherInteriorCheckBox.UseVisualStyleBackColor = true;
-            this.LeatherInteriorCheckBox.CheckedChanged += new System.EventHandler(this.LeatherInteriorCheckBox_CheckedChanged);
+            this.LeatherInteriorCheckBox.CheckedChanged += new System.EventHandler(this._LeatherInteriorCheckBox_CheckedChanged);
             // 
             // StereoSystemCheckBox
             // 
@@ -204,7 +204,7 @@
             this.StereoSystemCheckBox.TabIndex = 0;
             this.StereoSystemCheckBox.Text = "StereoSystem";
             this.StereoSystemCheckBox.UseVisualStyleBackColor = true;
-            this.StereoSystemCheckBox.CheckedChanged += new System.EventHandler(this.StereoSystemCheckBox_CheckedChanged);
+            this.StereoSystemCheckBox.CheckedChanged += new System.EventHandler(this._StereoSystemCheckBox_CheckedChanged);
             // 
             // BasePriceTextBox
             // 
@@ -269,7 +269,7 @@
             this.helpToolStripMenuItem});
             this.AutoCenterMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.AutoCenterMenuStrip.Name = "AutoCenterMenuStrip";
-            this.AutoCenterMenuStrip.Size = new System.Drawing.Size(491, 24);
+            this.AutoCenterMenuStrip.Size = new System.Drawing.Size(493, 24);
             this.AutoCenterMenuStrip.TabIndex = 18;
             this.AutoCenterMenuStrip.Text = "menuStrip1";
             // 
@@ -358,7 +358,7 @@
             this.CustomizedDetailingRadioButton.TabIndex = 2;
             this.CustomizedDetailingRadioButton.Text = "Customized Detailing";
             this.CustomizedDetailingRadioButton.UseVisualStyleBackColor = true;
-            this.CustomizedDetailingRadioButton.CheckedChanged += new System.EventHandler(this.CustomizedDetailingRadioButton_CheckedChanged);
+            this.CustomizedDetailingRadioButton.CheckedChanged += new System.EventHandler(this._CustomizedDetailingRadioButton_CheckedChanged);
             // 
             // PearlizedRadioButton
             // 
@@ -369,7 +369,7 @@
             this.PearlizedRadioButton.TabIndex = 1;
             this.PearlizedRadioButton.Text = "Pearlized";
             this.PearlizedRadioButton.UseVisualStyleBackColor = true;
-            this.PearlizedRadioButton.CheckedChanged += new System.EventHandler(this.PearlizedRadioButton_CheckedChanged);
+            this.PearlizedRadioButton.CheckedChanged += new System.EventHandler(this._PearlizedRadioButton_CheckedChanged);
             // 
             // StandardRadioButton
             // 
@@ -382,13 +382,13 @@
             this.StandardRadioButton.TabStop = true;
             this.StandardRadioButton.Text = "Standard";
             this.StandardRadioButton.UseVisualStyleBackColor = true;
-            this.StandardRadioButton.CheckedChanged += new System.EventHandler(this.StandardRadioButton_CheckedChanged);
+            this.StandardRadioButton.CheckedChanged += new System.EventHandler(this._StandardRadioButton_CheckedChanged);
             // 
             // SharpAutoCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 437);
+            this.ClientSize = new System.Drawing.Size(493, 418);
             this.Controls.Add(this.ExteriorFinishGroupBox);
             this.Controls.Add(this.AmountDueTextBox);
             this.Controls.Add(this.TradeInTextBox);
@@ -410,6 +410,8 @@
             this.Controls.Add(this.BasePriceLabel);
             this.Controls.Add(this.AutoCenterMenuStrip);
             this.MainMenuStrip = this.AutoCenterMenuStrip;
+            this.MaximumSize = new System.Drawing.Size(509, 457);
+            this.MinimumSize = new System.Drawing.Size(509, 457);
             this.Name = "SharpAutoCenter";
             this.Text = "Auto Center";
             this.AdditionalGroupBox.ResumeLayout(false);
