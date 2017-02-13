@@ -71,16 +71,16 @@ namespace SharpAutoCenter
         */
         private void _LeatherInteriorCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (LeatherInteriorCheckBox.Checked)
-            {
-                _additionalPrice += _leatherInterior;
-                AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
-            }
-            if (!LeatherInteriorCheckBox.Checked)
-            {
-                _additionalPrice -= _leatherInterior;
-                AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
-            };
+                if (LeatherInteriorCheckBox.Checked)
+                {
+                    _additionalPrice += _leatherInterior;
+                    AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
+                }
+                if (!LeatherInteriorCheckBox.Checked)
+                {
+                    _additionalPrice -= _leatherInterior;
+                    AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
+                }
         }
         /*
         *adding and subtracting the computer nav price to the additional price 
@@ -97,7 +97,7 @@ namespace SharpAutoCenter
             {
                 _additionalPrice -= _computerNavigationPrice;
                 AdditionalOptionsTextBox.Text = Convert.ToString("$" + _additionalPrice);
-            };
+            }
         }
         /*
         *adding and subtracting the standard price to the additional price 
@@ -152,19 +152,36 @@ namespace SharpAutoCenter
         }
         /*
         * doing all the calculations and then assigning them to string values for the textboxes.
+        * also doing validation to ensure the user cannot add negative values or string values into
+        * the program.
         */
         private void _CalculateButton_Click(object sender, EventArgs e)
         {
-            _basePrice = Convert.ToDecimal(BasePriceTextBox.Text);
-            _subTotal = _additionalPrice + _basePrice;
-            SubTotalTextBox.Text = _subTotal.ToString("C2");
-            _taxes = _taxRate * _subTotal;
-            SalesTaxTextBox.Text = _taxes.ToString("C2");
-            _total = _subTotal - _taxes;
-            TotalTextBox.Text = _total.ToString("C2");
-            _tradeInValue = Convert.ToDecimal(TradeInTextBox.Text);
-            _amountDue = _total - _tradeInValue;
-            AmountDueTextBox.Text = _amountDue.ToString("C2");
+            if(Convert.ToDecimal(BasePriceTextBox.Text) <= 0)
+            {
+                MessageBox.Show("The base price cannot be lower or equal to 0!");
+            }
+            if(_tradeInValue < 0)
+            {
+                MessageBox.Show("The trade in value cannot be lower than 0!");
+            }
+            try
+            {
+                _basePrice = Convert.ToDecimal(BasePriceTextBox.Text);
+                _subTotal = _additionalPrice + _basePrice;
+                SubTotalTextBox.Text = _subTotal.ToString("C2");
+                _taxes = _taxRate * _subTotal;
+                SalesTaxTextBox.Text = _taxes.ToString("C2");
+                _total = _subTotal + _taxes;
+                TotalTextBox.Text = _total.ToString("C2");
+                _tradeInValue = Convert.ToDecimal(TradeInTextBox.Text);
+                _amountDue = _total - _tradeInValue;
+                AmountDueTextBox.Text = _amountDue.ToString("C2");
+            }
+            catch
+            {
+                MessageBox.Show("You entered an unacceptable value!");
+            }
         }
         /*
         * clearing the text fields for the text boxes back to their defualts
