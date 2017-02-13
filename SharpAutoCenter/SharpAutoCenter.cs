@@ -157,16 +157,17 @@ namespace SharpAutoCenter
         */
         private void _CalculateButton_Click(object sender, EventArgs e)
         {
-            if(Convert.ToDecimal(BasePriceTextBox.Text) <= 0)
-            {
-                MessageBox.Show("The base price cannot be lower or equal to 0!");
-            }
-            if(_tradeInValue < 0)
-            {
-                MessageBox.Show("The trade in value cannot be lower than 0!");
-            }
             try
             {
+
+                if (Convert.ToDecimal(BasePriceTextBox.Text) <= 0)
+                {
+                    MessageBox.Show("The base price cannot be lower or equal to 0!");
+                }
+                if(_tradeInValue < 0)
+                {
+                    MessageBox.Show("The trade in value cannot be lower than 0!");
+                }
                 _basePrice = Convert.ToDecimal(BasePriceTextBox.Text);
                 _subTotal = _additionalPrice + _basePrice;
                 SubTotalTextBox.Text = _subTotal.ToString("C2");
